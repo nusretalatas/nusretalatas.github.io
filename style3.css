@@ -1,4 +1,7 @@
- :root {
+/* ========================================= */
+        /* 1. DEĞİŞKENLER VE TEMEL AYARLAR           */
+        /* ========================================= */
+        :root {
             --bg-color: #0c0c0c;
             --primary-color: #1a1a1a;
             --secondary-color: #2b2b2b;
@@ -10,24 +13,136 @@
             --font-sans: 'Poppins', sans-serif;
             --font-mono: 'Roboto Mono', monospace;
         }
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        *, *::before, *::after { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+
         html { scroll-behavior: smooth; }
+
         body {
-            background-color: var(--bg-color); color: var(--text-color); font-family: var(--font-sans);
-            line-height: 1.7; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            font-family: var(--font-sans);
+            line-height: 1.7; 
+            -webkit-font-smoothing: antialiased; 
+            -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
         }
+
         body.is-preload * { transition: none !important; }
-        #page-wrapper { display: flex; min-height: 100vh; }
-        #main-content { flex-grow: 1; width: 100%; padding: 2rem 4rem; }
-        section { margin-bottom: 4rem; }
+
+        a { color: var(--accent-color); text-decoration: none; transition: color 0.3s ease; }
+        a:hover { color: var(--heading-color); }
+
+        h1, h2, h3, h4 { color: var(--heading-color); font-weight: 600; }
+        
+        /* Scrollbar Özelleştirme */
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: var(--bg-color); }
         ::-webkit-scrollbar-thumb { background-color: var(--secondary-color); border-radius: 10px; border: 2px solid var(--bg-color); }
         ::-webkit-scrollbar-thumb:hover { background-color: var(--accent-color); }
-        h1, h2, h3, h4 { color: var(--heading-color); font-weight: 600; }
-        a { color: var(--accent-color); text-decoration: none; transition: color 0.3s ease; }
-        a:hover { color: var(--heading-color); }
+
+        /* ========================================= */
+        /* 2. SAYFA DÜZENİ (LAYOUT)                  */
+        /* ========================================= */
+        #page-wrapper { display: flex; min-height: 100vh; }
+        #main-content { flex-grow: 1; width: 100%; padding: 2rem 4rem; }
+        section { margin-bottom: 4rem; }
+
+        /* ========================================= */
+        /* 3. SIDEBAR (YAN MENÜ)                     */
+        /* ========================================= */
+        #sidebar {
+            width: 350px; 
+            flex-shrink: 0; 
+            background: var(--primary-color);
+            padding: 2rem; 
+            height: 100vh; 
+            position: sticky; 
+            top: 0;
+            overflow-y: auto; 
+            border-right: 1px solid var(--secondary-color);
+            transition: transform 0.4s ease-in-out; 
+            z-index: 1000;
+        }
+        #sidebar .inner { display: flex; flex-direction: column; height: 100%; }
+
+        /* Menü Başlıkları */
+        .major-heading {
+            margin-bottom: 2rem; font-size: 2rem; padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--secondary-color); display: inline-block; color: var(--heading-color);
+        }
+        #menu .major-heading { font-size: 1.5rem; margin: 2rem 0 1rem 0; }
+
+        /* Menü Listesi */
+        #menu ul { list-style: none; }
+        #menu ul li a, #menu ul li .opener { 
+            display: block; padding: 0.75rem 0; color: var(--text-color); 
+            border-bottom: 1px solid var(--secondary-color); 
+            transition: color 0.3s, padding-left 0.3s; 
+        }
+        #menu ul li a:hover, #menu ul li .opener:hover { color: var(--accent-color); padding-left: 10px; }
+        
+        /* Dropdown Mantığı */
+        #menu ul ul { padding-left: 1rem; display: none; }
+        #menu ul li .opener { cursor: pointer; position: relative; }
+        #menu ul li .opener::after { 
+            content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; 
+            position: absolute; right: 0; transition: transform 0.3s; 
+        }
+        #menu ul li .opener.active::after { transform: rotate(180deg); }
+
+        /* Mini Posts (İlgi Alanları) */
+        .mini-posts h3 { font-size: 1rem; }
+        .mini-posts article { display: flex; gap: 1rem; margin-bottom: 1rem; }
+        .mini-posts .image { width: 80px; flex-shrink: 0; }
+        .mini-posts img { width: 100%; border-radius: 5px; }
+        .mini-posts .post-content p { display: none; }
+
+        /* İletişim Sidebar */
+        #contact-sidebar .contact { list-style: none; }
+        #contact-sidebar .contact li { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
+        #contact-sidebar .contact .icon { width: 20px; text-align: center; color: var(--accent-color); }
+        #contact-sidebar .contact li a { color: var(--text-color); }
+        #contact-sidebar .contact li a:hover { color: var(--accent-color); }
+
+        /* Footer */
+        #footer { margin-top: auto; padding-top: 2rem; border-top: 1px solid var(--secondary-color); }
+        #footer .copyright { font-size: 0.8rem; color: #888; }
+
+        /* ========================================= */
+        /* 4. ANA İÇERİK BÖLÜMÜ                      */
+        /* ========================================= */
+        /* Header Main */
+        #header-main {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1rem 0; margin-bottom: 2rem; border-bottom: 1px solid var(--secondary-color);
+        }
+        #header-main .logo { font-family: var(--font-mono); font-size: 24px; font-weight: 700; color: var(--heading-color); }
+        #header-main .logo strong { color: var(--accent-color); }
+        
+        /* Mobile Toggle Button */
+        .menu-toggle { 
+            display: none; background: none; border: none; 
+            color: var(--text-color); font-size: 1.5rem; cursor: pointer; 
+            z-index: 1001; transition: color 0.3s ease; 
+        }
+        .menu-toggle:hover { color: var(--accent-color); }
+
+        /* İçerik Görselleri ve Yazıları */
+        .main-image { width: 100%; height: 300px; object-fit: cover; border-radius: 5px; margin-bottom: 2rem; }
+        .about-section h2 { font-size: 1.5rem; color: var(--accent-color); margin-top: 2rem; margin-bottom: 1rem; }
+        .about-section p { max-width: 800px; margin-bottom: 0.5rem; }
+        .about-section hr { border: 0; height: 1px; background: var(--secondary-color); margin: 3rem 0; }
+
+        /* Animasyonlar */
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 1s ease-out, transform 1s ease-out; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* Butonlar */
         .button {
             display: inline-block; border: 1px solid var(--accent-color); color: var(--accent-color);
             padding: 0.75rem 1.5rem; border-radius: 5px; font-family: var(--font-mono);
@@ -38,75 +153,69 @@
             background-color: var(--accent-tint); box-shadow: 0 0 15px 0 var(--accent-glow);
             transform: translateY(-2px);
         }
-        #header-main {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 1rem 0; margin-bottom: 2rem; border-bottom: 1px solid var(--secondary-color);
+
+        /* ========================================= */
+        /* 5. SERTİFİKALAR BÖLÜMÜ (ÖZEL TASARIM)     */
+        /* ========================================= */
+        #certifications .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
-        .menu-toggle { display: none; background: none; border: none; color: var(--text-color); font-size: 1.5rem; cursor: pointer; z-index: 1001; transition: color 0.3s ease; }
-        .menu-toggle:hover { color: var(--accent-color); }
-        #header-main .logo { font-family: var(--font-mono); font-size: 24px; font-weight: 700; color: var(--heading-color); }
-        #header-main .logo strong { color: var(--accent-color); }
-        #header-main .icons a { color: var(--text-color); font-size: 1.2rem; margin-left: 1.5rem; }
-        #header-main .icons a:hover { color: var(--accent-color); }
-        .major-heading {
-            margin-bottom: 2rem; font-size: 2rem; padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--secondary-color); display: inline-block; color: var(--heading-color);
+
+        #certifications article {
+            background: var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--secondary-color);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            overflow: hidden;
         }
-        .main-image {
-            width: 100%; height: 300px; object-fit: cover; border-radius: 5px; margin-bottom: 2rem;
+
+        #certifications article:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3), inset 0 0 20px rgba(255, 183, 66, 0.05);
         }
-        .about-section h2 {
-            font-size: 1.5rem;
+
+        #certifications .icon {
+            font-size: 1.8rem;
             color: var(--accent-color);
-            margin-top: 2rem;
             margin-bottom: 1rem;
+            background: rgba(255, 183, 66, 0.1);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
         }
-        .about-section p {
-            max-width: 800px;
-            margin-bottom: 0.5rem;
+
+        #certifications article:hover .icon {
+            background: var(--accent-color);
+            color: var(--bg-color);
+            transform: rotateY(360deg);
         }
-        .about-section hr {
-            border: 0;
-            height: 1px;
-            background: var(--secondary-color);
-            margin: 3rem 0;
+
+        #certifications .content h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--heading-color); }
+        #certifications .content p { font-size: 0.95rem; margin: 0; line-height: 1.4; color: var(--text-color); }
+        #certifications .content strong { color: #fff; }
+        
+        #certifications small {
+            display: block; margin-top: 8px; color: #666; 
+            font-size: 0.85rem; font-family: var(--font-mono);
+            border-top: 1px solid var(--secondary-color);
+            padding-top: 8px; width: 100%;
         }
-        #sidebar {
-            width: 350px; flex-shrink: 0; background: var(--primary-color);
-            padding: 2rem; height: 100vh; position: sticky; top: 0;
-            overflow-y: auto; border-right: 1px solid var(--secondary-color);
-            transition: transform 0.4s ease-in-out; z-index: 1000;
-        }
-        #sidebar .inner { display: flex; flex-direction: column; height: 100%; }
-        #search form { display: flex; }
-        #search input {
-            width: 100%; background: var(--secondary-color); border: 1px solid #444;
-            border-radius: 5px; padding: 0.75rem; color: var(--text-color); font-family: var(--font-sans); outline: none;
-        }
-        #search input::placeholder { color: #888; }
-        #search input:focus { border-color: var(--accent-color); box-shadow: 0 0 5px var(--accent-tint); }
-        #menu .major-heading { font-size: 1.5rem; margin: 2rem 0 1rem 0; }
-        #menu ul { list-style: none; }
-        #menu ul li a, #menu ul li .opener { display: block; padding: 0.75rem 0; color: var(--text-color); border-bottom: 1px solid var(--secondary-color); transition: color 0.3s, padding-left 0.3s; }
-        #menu ul li a:hover, #menu ul li .opener:hover { color: var(--accent-color); padding-left: 10px; }
-        #menu ul ul { padding-left: 1rem; display: none; }
-        #menu ul li .opener { cursor: pointer; position: relative; }
-        #menu ul li .opener::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; right: 0; transition: transform 0.3s; }
-        #menu ul li .opener.active::after { transform: rotate(180deg); }
-        .mini-posts h3 { font-size: 1rem; }
-        .mini-posts article { display: flex; gap: 1rem; margin-bottom: 1rem; }
-        .mini-posts .image { width: 80px; flex-shrink: 0; }
-        .mini-posts img { width: 100%; border-radius: 5px; }
-        .mini-posts .post-content p { display: none; }
-        #contact-sidebar .contact { list-style: none; }
-        #contact-sidebar .contact li { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
-        #contact-sidebar .contact .icon { width: 20px; text-align: center; color: var(--accent-color); }
-        #contact-sidebar .contact li a { color: var(--text-color); }
-        #contact-sidebar .contact li a:hover { color: var(--accent-color); }
-        #footer { margin-top: auto; padding-top: 2rem; border-top: 1px solid var(--secondary-color); }
-        #footer .copyright { font-size: 0.8rem; color: #888; }
-        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 1s ease-out, transform 1s ease-out; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ========================================= */
+        /* 6. MEDYA SORGULARI (RESPONSIVE)           */
+        /* ========================================= */
         @media (max-width: 1200px) {
             #sidebar { position: fixed; left: 0; top: 0; height: 100%; transform: translateX(-100%); }
             #sidebar.is-visible { transform: translateX(0); box-shadow: 5px 0 25px rgba(0,0,0,0.5); }
