@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "baslik": "Yeni Web Teknolojileri Duyuruldu",
+    "ozet": "2026 yılı itibarıyla CSS ve JavaScript standartlarında büyük güncellemeler yapıldı. Yeni özellikler geliştiricilere daha fazla esneklik sunuyor.",
+    "tarih": "20 Haziran 2026",
+    "orijinal_link": "#"
+  },
+  {
+    "id": 2,
+    "baslik": "Yapay Zeka ve Tasarımın Geleceği",
+    "ozet": "Yapay zeka araçlarının arayüz tasarım süreçlerine entegrasyonu hız kesmeden devam ediyor. Geliştiriciler artık daha çok otonom sistemler kullanıyor.",
+    "tarih": "19 Haziran 2026",
+    "orijinal_link": "#"
+  }
+]

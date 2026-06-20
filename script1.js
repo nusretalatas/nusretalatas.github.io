@@ -101,3 +101,40 @@
             }
 
         });
+
+        document.addEventListener("DOMContentLoaded", function() {
+    const haberKutusu = document.getElementById('haber-akisi');
+
+    // Eğer sayfada haber kutusu yoksa kodu çalıştırma
+    if(!haberKutusu) return;
+
+    fetch('haberler.json')
+        .then(response => {
+            if (!response.ok) throw new Error('Haberler çekilemedi.');
+            return response.json();
+        })
+        .then(haberler => {
+            // Yükleniyor yazısını temizle
+            haberKutusu.innerHTML = '';
+
+            haberler.forEach(haber => {
+                // Temanın orijinal yapısına uygun article oluştur
+                const article = document.createElement('article');
+                
+                article.innerHTML = `
+                    <h3 style="margin-bottom: 0.5rem;">${haber.baslik}</h3>
+                    <p style="font-size: 0.8em; color: #888; margin-bottom: 1rem;">${haber.tarih}</p>
+                    <p>${haber.ozet}</p>
+                    <ul class="actions">
+                        <li><a href="${haber.orijinal_link}" target="_blank" class="button">Kaynağa Git</a></li>
+                    </ul>
+                `;
+
+                haberKutusu.appendChild(article);
+            });
+        })
+        .catch(hata => {
+            console.error('Hata:', hata);
+            haberKutusu.innerHTML = '<article><p>Haber akışı şu an güncellenemiyor.</p></article>';
+        });
+});
