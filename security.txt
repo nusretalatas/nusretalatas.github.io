@@ -1,7 +1,7 @@
 Contact: mailto:nusretala1@gmail.com
-Contact: https://www.nusretalatas.me/#iletisim
-Policy: https://www.nusretalatas.me/
+Contact: https://www.nusretalatas.github.io/#iletisim
+Policy: https://www.nusretalatas.github.io/
 Preferred-Languages: tr, en
-Canonical: https://www.nusretalatas.me/
+Canonical: https://www.nusretalatas.github.io/
 
 Bu site güvenlik açıkları ve güvenilir bildirimler için iletişim kanalını açık tutar. Güvenlik bulguları için lütfen e-posta yoluyla iletişime geçin.
