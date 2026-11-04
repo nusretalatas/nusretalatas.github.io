@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="tr" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nusret Alataş — Full-Stack Geliştirici & Siber Güvenlik</title>
+<meta name="description" content="Nusret Alataş — Full-stack geliştirici ve siber güvenlik meraklısı. Güvenli web ve mobil uygulamalar, sızma testi, ağ analizi ve temiz kod.">
+<meta name="theme-color" content="#08080b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308080b'/%3E%3Ctext x='16' y='23' font-family='Helvetica,Arial' font-size='19' font-weight='bold' fill='%23d8ff3e' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="glow" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<div class="intro" aria-hidden="true">
+  <div class="intro-inner">
+    <div class="intro-name">Nusret Alataş</div>
+    <div class="intro-bar"><i></i></div>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo" data-scramble>Nusret<b>.</b></a>
+    <nav class="nav-links" aria-label="Ana menü">
+      <a href="#hakkimda" data-nav data-scramble>Hakkımda</a>
+      <a href="#yetenekler" data-nav data-scramble>Yetenekler</a>
+      <a href="#sertifikalar" data-nav data-scramble>Sertifikalar</a>
+      <a href="#projeler" data-nav data-scramble>Projeler</a>
+      <a href="#lab" data-nav data-scramble>Laboratuvar</a>
+      <a href="#iletisim" data-nav data-scramble>İletişim</a>
+    </nav>
+    <div class="nav-right">
+      <a href="#iletisim" class="nav-cta" data-magnet><span>Birlikte çalışalım</span></a>
+      <button class="burger" id="burger" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <nav aria-label="Mobil menü" style="display:grid">
+    <a href="#hakkimda" class="mm-link" style="--i:0"><i>01</i>Hakkımda</a>
+    <a href="#yetenekler" class="mm-link" style="--i:1"><i>02</i>Yetenekler</a>
+    <a href="#sertifikalar" class="mm-link" style="--i:2"><i>03</i>Sertifikalar</a>
+    <a href="#projeler" class="mm-link" style="--i:3"><i>04</i>Projeler</a>
+    <a href="#lab" class="mm-link" style="--i:4"><i>05</i>Laboratuvar</a>
+    <a href="#iletisim" class="mm-link" style="--i:5"><i>06</i>İletişim</a>
+  </nav>
+  <div class="mm-foot">
+    <span>nusretala1@gmail.com</span>
+    <span>Ankara / Çankaya</span>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <canvas class="hero-net" id="net" aria-hidden="true"></canvas>
+    <div class="hero-blob" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <div class="hero-meta">
+        <span><i class="live-dot"></i>Yeni projelere açık — <b>Ankara, TR</b></span>
+        <span class="right">Portfolyo <span style="opacity:.4">/</span> <b>2026</b></span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line"><span class="line-in">Nusret</span></span>
+        <span class="line line--2"><span class="line-in">Alataş<i class="mk">*</i></span></span>
+      </h1>
+
+      <div class="hero-sub">
+        <span>Full-Stack Geliştirici</span>
+        <span class="bar"></span>
+        <span>Siber Güvenlik Meraklısı</span>
+      </div>
+
+      <div class="hero-foot-wrap">
+        <div class="hero-badge" aria-hidden="true">
+          <svg viewBox="0 0 120 120" width="112" height="112">
+            <defs><path id="circlePath" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
+            <text fill="#8a8a95" font-size="8.4" letter-spacing="3.1" font-family="Helvetica,Arial">
+              <textPath href="#circlePath">SİBER GÜVENLİK • FULL-STACK • TEMİZ KOD •</textPath>
+            </text>
+            <circle cx="60" cy="60" r="3.2" fill="#d8ff3e"/>
+          </svg>
+        </div>
+
+        <div class="hero-foot">
+          <p class="hero-copy">
+            Dijital dünyanın hem <strong>yaratıcı</strong> hem de <strong>koruyucu</strong> tarafındayım.
+            Modern web teknolojileriyle hızlı arayüzler kuruyor, aynı sistemleri
+            sızma testleriyle sınayıp daha sağlam hâle getiriyorum.
+          </p>
+          <div class="hero-actions">
+            <a href="#projeler" class="btn" data-magnet><span>Projeleri gör <i class="ar">↗</i></span></a>
+            <a href="#iletisim" class="btn btn-ghost" data-magnet><span>İletişime geç</span></a>
+          </div>
+        </div>
+
+        <div class="scroll-cue"><span class="track"></span> Keşfetmek için kaydır</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="mq" aria-hidden="true">
+    <div class="mq-track">
+      <div class="mq-item">Full-Stack Geliştirici <i>✳</i> <span class="out">Siber Güvenlik</span> <i>✳</i> Mobil Uygulama <i>✳</i> <span class="out">Temiz Kod</span> <i>✳</i></div>
+      <div class="mq-item">Full-Stack Geliştirici <i>✳</i> <span class="out">Siber Güvenlik</span> <i>✳</i> Mobil Uygulama <i>✳</i> <span class="out">Temiz Kod</span> <i>✳</i></div>
+    </div>
+  </div>
+
+  <!-- HAKKIMDA -->
+  <section class="sec" id="hakkimda">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <span class="eyebrow">01 — Hakkımda</span>
+        <h2 class="sec-title">Kod yazan,<br>sistemleri <span class="it it-acid">koruyan</span> biri.</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-body" data-reveal style="--i:1">
+          <p>
+            Merhaba, ben <strong>Nusret Alataş</strong>. Dijital dünyanın hem yaratıcı hem de koruyucu
+            tarafında yer alan bir yazılımcıyım. <strong>Bilgisayar Programcılığı</strong> mezunuyum ve
+            yazılım geliştirme becerilerimi, sistemleri siber tehditlere karşı koruma tutkumla
+            birleştiriyorum.
+          </p>
+          <p>
+            Bir arayüzün yalnızca <span class="hl">güzel görünmesi</span> değil, hızlı, erişilebilir ve
+            güvenli olması gerektiğine inanıyorum. Bu yüzden her projede aynı soruyu sorarım:
+            <em>“Bunu kırmak isteyen biri nereden başlardı?”</em> Cevabı bildiğimde kodu yazmak çok daha kolay oluyor.
+          </p>
+          <p>
+            Web'den mobile, ağ analizinden sızma testine kadar geniş bir alanda çalışıyor;
+            öğrendiğim her yeni şeyi bir sonraki projeye taşıyorum.
+          </p>
+        </div>
+
+        <div class="facts" data-reveal style="--i:2">
+          <div class="fact">
+            <span class="fact-k">Eğitim</span>
+            <span class="fact-v">Ankara Üniversitesi<small>Bilgisayar Programcılığı</small></span>
+          </div>
+          <div class="fact">
+            <span class="fact-k">Odak</span>
+            <span class="fact-v">Full-Stack Geliştirme<small>Web · Mobil · API</small></span>
+          </div>
+          <div class="fact">
+            <span class="fact-k">İkinci Alan</span>
+            <span class="fact-v">Siber Güvenlik<small>Sızma testi · Ağ analizi</small></span>
+          </div>
+          <div class="fact">
+            <span class="fact-k">Konum</span>
+            <span class="fact-v">Ankara / Çankaya<small>Uzaktan çalışmaya açık</small></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote" data-reveal>
+        <blockquote>“Kodun güvenliği, en az <span>işlevselliği</span> kadar önemlidir.”</blockquote>
+        <p class="small">
+          Benim çalışma prensibim bu cümlede özetleniyor: önce çalışsın, sonra hızlansın, en sonunda da kırılmaya
+          dirençli olsun.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- YETENEKLER -->
+  <section class="sec" id="yetenekler">
+    <div class="wrap">
+      <div class="skills-head">
+        <div data-reveal>
+          <span class="eyebrow">02 — Yetenekler</span>
+          <h2 class="sec-title">Kullandığım <span class="it">araçlar</span>.</h2>
+        </div>
+        <p class="small" data-reveal style="--i:1;max-width:34ch;line-height:1.7">
+          Teknoloji seçimi ihtiyaca göre değişir; temel prensip ise hep aynı: okunabilir, sürdürülebilir ve güvenli kod.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <article class="skill" data-reveal style="--i:0">
+          <span class="skill-n">01 / Arayüz</span>
+          <h3>Frontend</h3>
+          <p>Hızlı, erişilebilir ve kullanıcı odaklı arayüzler; tasarımın koda dönüştürülmesi ve mobil uyum.</p>
+          <div class="pills">
+            <span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">JavaScript</span>
+            <span class="pill">Responsive</span><span class="pill">UI/UX</span><span class="pill">Erişilebilirlik</span>
+          </div>
+        </article>
+
+        <article class="skill" data-reveal style="--i:1">
+          <span class="skill-n">02 / Mantık</span>
+          <h3>Backend & Veritabanı</h3>
+          <p>API tasarımı, veri modelleme, güvenli erişim ve performans odaklı backend geliştirme.</p>
+          <div class="pills">
+            <span class="pill">Laravel</span><span class="pill">Node.js</span><span class="pill">REST API</span>
+            <span class="pill">MySQL</span><span class="pill">JWT</span><span class="pill">PHP</span>
+          </div>
+        </article>
+
+        <article class="skill" data-reveal style="--i:2">
+          <span class="skill-n">03 / Mobil</span>
+          <h3>Mobil Uygulama</h3>
+          <p>Ionic ve TypeScript ile gerçek iş akışlarını mobil deneyime taşıma; kullanıcı dostu arayüzler kurma.</p>
+          <div class="pills">
+            <span class="pill">Ionic</span><span class="pill">TypeScript</span><span class="pill">Angular</span>
+            <span class="pill">Capacitor</span><span class="pill">PWA</span><span class="pill">UX akışı</span>
+          </div>
+        </article>
+
+        <article class="skill" data-reveal style="--i:3">
+          <span class="skill-n">04 / Savunma</span>
+          <h3>Güvenlik & Araçlar</h3>
+          <p>Sistemi saldırgan bakış açısıyla taramak, güvenlik açıklarını bulmak ve uygulamaları daha dayanıklı hale getirmek.</p>
+          <div class="pills">
+            <span class="pill">Kali Linux</span><span class="pill">Nmap</span><span class="pill">Burp Suite</span>
+            <span class="pill">Wireshark</span><span class="pill">OWASP</span><span class="pill">Git</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERTİFİKALAR -->
+  <section class="sec" id="sertifikalar">
+    <div class="wrap">
+      <div data-reveal>
+        <span class="eyebrow">03 — Sertifikalar</span>
+        <h2 class="sec-title">Teknik alanlarda <span class="it it-acid">gelişim ve kanıt</span>.</h2>
+      </div>
+
+      <p class="lead" data-reveal style="--i:1;margin-top:20px;max-width:64ch">
+        Öğrenme yolculuğumun ve uygulama deneyiminin kanıtı olan alanlarda çalıştığım teknolojiler ve geliştirme disiplinleri; iş süreçlerinde güven, düzen ve üretkenlik odaklı şekilde ilerliyor.
+      </p>
+
+      <div class="cert-grid">
+        <article class="cert-card" data-reveal style="--i:0">
+          <span class="cert-tag">01 / Güvenlik</span>
+          <h3>Junior Cybersecurity Analyst Career Path</h3>
+          <p>Cisco tarafından verilen güvenlik yolculuğu eğitimi; ağ güvenliği, siber tehditler, güvenli çalışma mantığı ve analitik düşünme temelleri üzerine odaklanır.</p>
+          <div class="cert-meta">
+            <span>Cisco</span><span>Cybersecurity</span><span>Career Path</span>
+          </div>
+        </article>
+
+        <article class="cert-card" data-reveal style="--i:1">
+          <span class="cert-tag">02 / Güvenlik</span>
+          <h3>Sosyal Mühendislik ve Oltalama</h3>
+          <p>BTK Akademi tarafından verilen sosyal mühendislik, oltalama, güvenlik farkındalığı ve saldırı yöntemlerine karşı bilinç geliştirme eğitimi.</p>
+          <div class="cert-meta">
+            <span>BTK</span><span>Phishing</span><span>Social Engineering</span>
+          </div>
+        </article>
+
+        <article class="cert-card" data-reveal style="--i:2">
+          <span class="cert-tag">03 / Ağ</span>
+          <h3>IT Essentials</h3>
+          <p>Cisco tarafından sunulan temel ağ ve sistem bilgisi eğitimi; donanım, yazılım, ağ temelleri ve teknik problem çözme becerileri üzerine çalışma.</p>
+          <div class="cert-meta">
+            <span>Cisco</span><span>IT Essentials</span><span>Ağ</span>
+          </div>
+        </article>
+
+        <article class="cert-card" data-reveal style="--i:3">
+          <span class="cert-tag">04 / Ağ</span>
+          <h3>CCNA: Introduction to Networks</h3>
+          <p>Temel ağ kurulumları, routing, switching, IP yapılandırmaları ve ağ iletişimi kavramları üzerine Cisco eğitim programı.</p>
+          <div class="cert-meta">
+            <span>Cisco</span><span>CCNA</span><span>Networking</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="cert-grid" style="margin-top:16px">
+        <article class="cert-card" data-reveal style="--i:0">
+          <span class="cert-tag">05 / Programlama</span>
+          <h3>C# Programlama</h3>
+          <p>BTK Akademi tarafından verilen C# programlama eğitimi; temel yazılım mantığı, nesne yönelimli yaklaşım ve uygulama geliştirme temelleri.</p>
+          <div class="cert-meta">
+            <span>BTK</span><span>C#</span><span>Programlama</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJELER -->
+  <section class="sec" id="projeler">
+    <div class="wrap">
+      <div class="proj-head">
+        <div data-reveal>
+          <span class="eyebrow">04 — Projeler</span>
+          <h2 class="sec-title">Seçilmiş <span class="it it-acid">işler</span>.</h2>
+        </div>
+        <p class="small" data-reveal style="--i:1;max-width:30ch;line-height:1.7">
+          Her proje, gerçek bir ihtiyaçtan doğdu; kullanıcı problemi, çözüm ve iş akışı içeren uygulamalar.
+        </p>
+      </div>
+
+      <div class="proj-list" id="projList"></div>
+    </div>
+  </section>
+
+  <!-- LAB / TERMINAL -->
+  <section class="sec" id="lab">
+    <div class="wrap">
+      <div data-reveal>
+        <span class="eyebrow">05 — Laboratuvar</span>
+        <h2 class="sec-title">Güvenlik, benim için<br>bir <span class="it">bulmaca</span>.</h2>
+      </div>
+
+      <div class="lab">
+        <div data-reveal style="--i:1">
+          <p class="lead" style="margin-bottom:22px">
+            Dijital sistemlerin güvenliğini sağlamak, benim için bir bulmaca çözmek gibi. Sızma testleri,
+            ağ analizi ve güvenlik açıklarını kapatarak sistemleri daha dirençli hâle getiriyorum.
+          </p>
+          <div class="lab-notes">
+            <div class="note">
+              <span class="note-n">01</span>
+              <div><h4>Keşif & Parmak İzi</h4><p>Açık portlar, servis sürümleri ve yüzey alanının haritalanması.</p></div>
+            </div>
+            <div class="note">
+              <span class="note-n">02</span>
+              <div><h4>Zafiyet Analizi</h4><p>OWASP Top 10 odaklı kontrol, manuel doğrulama ve raporlama.</p></div>
+            </div>
+            <div class="note">
+              <span class="note-n">03</span>
+              <div><h4>Ağ Trafiği</h4><p>Paket seviyesinde inceleme, anomali tespiti ve log değerlendirme.</p></div>
+            </div>
+            <div class="note">
+              <span class="note-n">04</span>
+              <div><h4>Sertleştirme</h4><p>Bulunan açıkların kapatılması ve savunma katmanlarının kurulması.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="term" id="term" data-reveal style="--i:2">
+          <div class="term-bar">
+            <span class="d"></span><span class="d"></span><span class="d"></span>
+            <span class="term-title">nusret@portfolio — zsh</span>
+            <button class="term-clear" id="termClear" type="button">temizle</button>
+          </div>
+          <div class="term-body" id="termBody"></div>
+          <form class="term-input-row" id="termForm" autocomplete="off">
+            <span class="term-prompt">➜ ~</span>
+            <input id="termInput" type="text" aria-label="Terminal komutu" placeholder="help yaz ve Enter'a bas" spellcheck="false">
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- YOLCULUK -->
+  <section class="sec" id="yolculuk">
+    <div class="wrap">
+      <div data-reveal>
+        <span class="eyebrow">06 — Yolculuk</span>
+        <h2 class="sec-title">Nasıl buraya <span class="it">geldim</span>.</h2>
+      </div>
+
+      <div class="tl">
+        <div class="tl-item" data-reveal>
+          <span class="tl-k">01</span>
+          <div>
+            <h3>Temeller — Bilgisayar Programcılığı</h3>
+            <p>Ankara Üniversitesi'nde algoritma, veri yapıları ve yazılım mühendisliği temelleri. İlk satır kodlar burada yazıldı.</p>
+          </div>
+          <span class="tl-tag">Eğitim</span>
+        </div>
+        <div class="tl-item" data-reveal style="--i:1">
+          <span class="tl-k">02</span>
+          <div>
+            <h3>Web geliştirme ve ilk gerçek müşteri</h3>
+            <p>HTML/CSS'ten JavaScript'e uzanan süreç; bir nakliye firması için kurumsal site geliştirerek işi sahada öğrenmek.</p>
+          </div>
+          <span class="tl-tag">Web</span>
+        </div>
+        <div class="tl-item" data-reveal style="--i:2">
+          <span class="tl-k">03</span>
+          <div>
+            <h3>Mobile geçiş — Ionic & TypeScript</h3>
+            <p>Araç kiralama uygulamasıyla mobil tarafta üretim yapmak: rezervasyon akışı, durum yönetimi ve yayın süreci.</p>
+          </div>
+          <span class="tl-tag">Mobil</span>
+        </div>
+        <div class="tl-item" data-reveal style="--i:3">
+          <span class="tl-k">04</span>
+          <div>
+            <h3>Güvenlik tarafı</h3>
+            <p>Sızma testi, ağ analizi ve güvenlik açığı avcılığı: yazdığım kodun kırılmaya ne kadar dayanıklı olduğunu test etmek.</p>
+          </div>
+          <span class="tl-tag">Güvenlik</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- İLETİŞİM -->
+  <section class="sec contact" id="iletisim">
+    <div class="wrap contact-inner">
+      <span class="eyebrow" data-reveal>07 — İletişim</span>
+      <h2 class="contact-title" data-reveal style="--i:1">Bir fikrin mi var?<br><span class="it it-acid">Konuşalım.</span></h2>
+
+      <a href="mailto:nusretala1@gmail.com" class="mail" data-reveal style="--i:2">
+        nusretala1@gmail.com <span>↗</span>
+      </a>
+
+      <div class="contact-grid">
+        <a href="tel:+905356586547" class="c-block" data-reveal style="--i:0">
+          <span class="k">Telefon</span>
+          <span class="v">+90 535 658 65 47</span>
+          <span class="s">Hafta içi 09:00 — 19:00</span>
+        </a>
+        <a href="https://wa.me/905356586547" target="_blank" rel="noopener" class="c-block" data-reveal style="--i:1">
+          <span class="k">WhatsApp</span>
+          <span class="v">Hızlı mesaj ↗</span>
+          <span class="s">Genelde aynı gün dönüş</span>
+        </a>
+        <div class="c-block" data-reveal style="--i:2">
+          <span class="k">Konum</span>
+          <span class="v">Ankara / Çankaya</span>
+          <span class="s">06450 · Uzaktan çalışmaya açık</span>
+        </div>
+        <div class="c-block" data-reveal style="--i:3">
+          <span class="k">E-posta</span>
+          <span class="v">nusretala1@gmail.com</span>
+          <button class="copy-btn" id="copyEmail" type="button">Adresi kopyala</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span class="small">© <span id="year">2026</span> Nusret Alataş — Sıfır bağımlılıkla, elde kodlandı.</span>
+    <span class="small"><a href="https://github.com/nusretalatas" target="_blank" rel="noopener">GitHub ↗</a></span>
+    <a href="#top" class="to-top">Başa dön <span class="arrow">↑</span></a>
+  </div>
+</footer>
+
+<!-- floating project preview -->
+<div class="proj-float" id="projFloat" aria-hidden="true">
+  <div class="pf-art" id="pfArt"><i id="pfLabel">PROJE</i><b id="pfLetter">N</b></div>
+</div>
+
+<!-- modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-panel">
+    <button class="modal-close" id="modalClose" aria-label="Kapat">✕</button>
+    <span class="modal-kicker" id="modalKicker">Proje</span>
+    <h3 id="modalTitle"></h3>
+    <p id="modalDesc"></p>
+    <ul id="modalList"></ul>
+    <div class="modal-tags" id="modalTags"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast">Kopyalandı</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
